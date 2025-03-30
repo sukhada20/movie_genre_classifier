@@ -10,7 +10,6 @@ from sklearn.svm import SVC
 import pickle
 
 # Ensure required NLTK datasets are downloaded
-nltk.download("punkt")
 nltk.download("stopwords")
 
 # Sample dataset to reduce training time
@@ -19,6 +18,7 @@ train_sample = train_data.sample(5000, random_state=42)  # Take 5k random sample
 
 # Data cleaning function
 def clean_text(text):
+    nltk.download("punkt")  # Ensure 'punkt' is downloaded
     stemmer = LancasterStemmer()
     stop_words = set(stopwords.words("english"))
     text = text.lower()
