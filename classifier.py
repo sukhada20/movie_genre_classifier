@@ -5,10 +5,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 
 # Load the trained model and vectorizer
-with open("model.pkl", "rb") as model_file:
+with open("svm_model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
-with open("vectorizer.pkl", "rb") as vectorizer_file:
+with open("tfidf_vectorizer.pkl", "rb") as vectorizer_file:
     vectorizer = pickle.load(vectorizer_file)
 
 st.title("Movie Genre Predictor")
